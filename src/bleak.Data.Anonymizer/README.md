@@ -6,7 +6,7 @@ Describe in a JSON `.anonconfig` which columns of which delimited files to anony
 method (fake names, e-mail addresses, phone numbers, dates, addresses, hex tokens, GUIDs, constants, and so on).
 Files are processed as streams, so inputs can be larger than RAM.
 
-See [ANON-CONFIG.md](https://github.com/jamalkhan/bleak.Data.Anonymizer/blob/main/ANON-CONFIG.md) for the full config reference.
+See [ANON-CONFIG.md](https://github.com/jamalkhan/bleak.Data.Anonymizer/blob/main/src/bleak.Data.Anonymizer/ANON-CONFIG.md) for the full config reference.
 
 ## Install
 
