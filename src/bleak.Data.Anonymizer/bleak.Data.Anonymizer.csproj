@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <PackageId>bleak.Data.Anonymizer</PackageId>
+    <Authors>Jamal Khan</Authors>
+    <Company>bleak LLC</Company>
+    <Copyright>bleak LLC</Copyright>
+    <Description>Config-driven PII anonymizer for large delimited files: fake names, emails, phones, dates, addresses, GUIDs and more.</Description>
+    <PackageTags>anonymize;pii;csv;privacy;fake-data</PackageTags>
+    <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/jamalkhan/bleak.Data.Anonymizer</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jamalkhan/bleak.Data.Anonymizer.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bleak.Data.InfiniteDataLoader" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

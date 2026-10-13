@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/bleak.Data.Anonymizer/bleak.Data.Anonymizer.csproj" />
+  <Project Path="tests/bleak.Data.Anonymizer.Tests/bleak.Data.Anonymizer.Tests.csproj" />
+</Solution>
