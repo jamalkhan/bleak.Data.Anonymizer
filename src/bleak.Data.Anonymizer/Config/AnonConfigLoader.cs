@@ -29,5 +29,12 @@ public static class AnonConfigLoader
            ?? throw new InvalidOperationException("Config deserialized to null.");
 
     public static AnonConfig FromFile(string path)
-        => FromJson(File.ReadAllText(path));
+    {
+        var config = FromJson(File.ReadAllText(path));
+        if (string.IsNullOrWhiteSpace(config.Name))
+        {
+            config.Name = Path.GetFileNameWithoutExtension(path);
+        }
+        return config;
+    }
 }

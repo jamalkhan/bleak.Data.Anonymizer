@@ -12,6 +12,12 @@ public sealed class AnonConfig
 {
     public int Version { get; set; } = 1;
 
+    /// <summary>
+    /// Optional display name for the run, used in log messages. When omitted,
+    /// <see cref="AnonConfigLoader.FromFile"/> fills it with the config file name (without extension).
+    /// </summary>
+    public string? Name { get; set; }
+
     public AnonRunConfig Run { get; set; } = new();
 
     /// <summary>

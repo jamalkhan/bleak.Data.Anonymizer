@@ -25,6 +25,7 @@ accepts a path to your own) and by `AnonymizeEngine.Run(...)`. `.anonconfig` fil
 ```jsonc
 {
   "version": 1,
+  "name": "customers",                 // optional; shown in log messages (defaults to the config file name)
   "run": { "onError": "skip", "inputPrefix": "src_", "outputPrefix": "anonymized_" },
   "inputFolder": "./input",             // base for relative file paths (rel. to this config)
   "outputFolder": "./output", // where renamed outputs land (rel. to this config)
@@ -38,7 +39,7 @@ resolve relative to the **config file's folder** when not absolute.
 ### `run`
 | field | values | default | meaning |
 |---|---|---|---|
-| `onError` | `skip` \| `abort` | `skip` | On a per-cell anonymizer exception. **skip**: leave the cell unchanged, log it, keep going. **abort**: stop the run. |
+| `onError` | `skip` \| `abort` | `skip` | On a per-cell anonymizer exception. **skip**: leave the cell unchanged, count it, keep going (one aggregate Warning per file; the value is never logged). **abort**: stop the run. |
 | `seed` | integer | *(none)* | Optional RNG seed. When set, the run is reproducible (same fakes every time); still random per occurrence. |
 | `inputPrefix` | string | `src_` | Prefix stripped from the input filename when deriving the output name. |
 | `outputPrefix` | string | `anonymized_` | Prefix prepended in its place. |
@@ -61,7 +62,7 @@ resolve relative to the **config file's folder** when not absolute.
 ### `columns[]` — ColumnRule
 | field | meaning |
 |---|---|
-| `name` | The column header to anonymize (case-insensitive). Unmatched names are logged and skipped. |
+| `name` | The column header to anonymize (case-insensitive). Unmatched names are skipped and reported in one Warning per file. |
 | `method` | Which anonymizer to use (see below). |
 | `options` | Free-form per-method options object. |
 | `whenEmpty` | `passthrough` (default — leave empty cells empty; don't fabricate data) or `generate` (produce a fake even for an empty source cell). |
