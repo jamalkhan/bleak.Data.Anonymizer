@@ -14,6 +14,8 @@ See [ANON-CONFIG.md](https://github.com/jamalkhan/bleak.Data.Anonymizer/blob/mai
 dotnet add package bleak.Data.Anonymizer
 ```
 
+Requires .NET 10. Dependencies: `bleak.Data.InfiniteDataLoader` (2.0.x) and `Microsoft.Extensions.Logging.Abstractions` (10.0.x).
+
 ## Usage
 
 ```csharp
@@ -74,4 +76,4 @@ is now 2.0.0.
 
 ## License
 
-[The Unlicense](LICENSE) (public domain).
+[The Unlicense](https://github.com/jamalkhan/bleak.Data.Anonymizer/blob/main/LICENSE) (public domain).
